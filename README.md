@@ -2,4 +2,4 @@
 CS-UoK  Level-1 1st semester web project
 
 
-Live Demo : https://madushas.github.io/Petshop/index.html
+Live Demo : https://madushas.github.io/Petshop/
