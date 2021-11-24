@@ -13,14 +13,13 @@ body{
 }
 
 .contact-box{
-	max-width: 900px;
 	grid-template-columns: repeat(2, 1fr);
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	background-color: #2C394B;
 	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
-    border-radius: 20px;
+	border-radius: 20px;
 }
 
 .left{
@@ -179,6 +178,91 @@ body{
 	left: 0;
 	align-content: flex-start;
 	text-align: left;
+}
+.wi-250{
+	max-height: 250px !important;
+}
+.read-box:hover .read span {
+    transform: translateX(0%);
+}
+.read {
+	color: #fff;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    padding-right: 2rem;
+}
+.read span {
+    position: relative;
+    transform: translateX(-200%);
+    display: inline-block;
+    transition: 0.6s cubic-bezier(.6,.01,0,1);
+}
+.read::before {
+    background: #ffc312;
+    bottom: 0;
+    height: .125rem;
+    margin: auto;
+    left: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transform: scaleX(.2);
+    transform-origin: left center;
+    z-index: 0;
+    animation: link-out;
+    animation-fill-mode: forwards;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(.6,.01,0,1);
+}
+.read-box:hover .read::before{
+    animation: link-in;
+    animation-fill-mode: forwards;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(.6,.01,0,1);
+} 
+
+@keyframes link-out{
+    0%{
+        transform-origin: right center;
+        transform: scaleX(.2);
+    }
+    70%{
+        transform-origin: right center;
+    }
+    71%{
+        transform-origin: left center;
+        transform: scaleX(1);
+    }
+
+    100%{
+        transform-origin: left center;
+        transform: scaleX(.2);
+    }
+}
+
+@keyframes link-in{
+    0%{
+        transform-origin: left center;
+        transform: scaleX(.2);
+    }
+    70%{
+        transform-origin: left center;
+        transform: scaleX(1);
+    }
+    71%{
+        transform-origin: right center;
+    }
+
+    100%{
+        transform-origin: right center;
+        transform: scaleX(.2);
+    }
 }
 
 @media screen and (max-width: 768px){
